@@ -1,0 +1,98 @@
+
+extends layout
+
+
+
+block main-content   
+    .background-container.mb-4
+        nav.navbar.navbar-expand-lg.bg-body-tertiary.fixed-top
+            .container-fluid
+                a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+                button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+                    span.navbar-toggler-icon
+                .collapse.navbar-collapse.text1(id="navbarSupportedContent")
+                    ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+                        li.nav-item
+                            a.nav-link.fs-5(aria-current="page", href="/") Home
+                        li.nav-item
+                            a.nav-link.fs-5(href="/shop") Shop
+                        li.nav-item
+                            a.nav-link.fs-5(href="/news") News      
+                        li.nav-item
+                            a.nav-link.active.fs-5(href="/about") About
+                        li.nav-item 
+                            a.nav-link(href="/cart")
+                                img(src="/images/cart-shopping-solid.svg", alt="Add to Cart", style="max-width: 1.5rem; height: auto; min-width:1.4rem;")     
+        .about-section
+            h1 
+                strong About Us
+            p Experienced and Friendly
+    .container.mt-5
+        .row.justify-content-center
+            .col-md-4.mb-4
+                .d-flex.justify-content-center
+                    img.img-fluid(src="/images/pencil4 Background Removed.png", alt="500+ UI Components Image")
+                .card.border-0
+                    .card-body.mb-3
+                        h2.card-title.fs-4 DARK AND LIGHT
+                        p.card-text Immerse yourself in the art of contrast with our "Dark and Light" collection. This curated selection harmonizes shadows and highlights, offering a balance of sophistication and warmth. 
+                        a.btn.text-dark(href="#") READ MORE
+                            span.ms-1
+                                img(src="/images/arrow Background Removed.png", alt="arrow")
+            .col-md-4.mb-4
+                .d-flex.justify-content-center
+                    img.img-fluid(src="/images/brush Background Removed.png", alt="500+ UI Components Image")
+                .card.border-0
+                    .card-body.mb-3
+                        h2.card-title.fs-4 FULLY RESPONSIVE
+                        p.card-text Experience the epitome of adaptability with our "Fully Responsive" range. Each piece is meticulously designed to seamlessly integrate into your living spaces. 
+                        a.btn.text-dark(href="#") READ MORE
+                            span.ms-1
+                                img(src="/images/arrow Background Removed.png", alt="arrow")                   
+    .container-fluid.mt-5.bg-dark
+        .row
+            .col-md-6.position-relative
+                .bg-light.p-4.position-relative
+                    h2 Our Company
+                    p.
+                        At 'My Home,' our passion for transforming spaces into personalized
+                        sanctuaries drives us to bring you a unique blend of elegance and functionality. Nestled within
+                        the heart of home decor, our journey began with a vision to curate spaces that resonate with
+                        individual styles. Our team, united by a shared love for design, carefully selects each piece to
+                        tell a story. From timeless classics to contemporary marvels, we believe in crafting homes that
+                        reflect your personality. Beyond aesthetics, our commitment extends to quality and
+                        craftsmanship, ensuring that every item finds its perfect place in your home. Join us on this
+                        journey of creating harmonious living spaces that truly feel like 'home.'
+            .col-md-6.position-relative
+                img.img-fluid.company-image(src="/images/aboutus.jpeg", alt="Company Image")
+    .container.mt-5
+        h2.text-center.mb-4.fontStyle Meet Our Professional Team
+        .row
+            .col-md-3.mb-4
+                .card.team-card
+                    img.card-img-top(src="images/member1.jpeg", alt="Team Member 1")
+                    .card-body.text-center
+                        h5.card-title John Doe
+                        p.card-text Interior Designer
+            .col-md-3.mb-4
+                .card.team-card
+                    img.card-img-top(src="/images/member2.jpeg", alt="Team Member 1")
+                    .card-body.text-center
+                        h5.card-title Jane Smith
+                        p.card-text Project Manager
+            .col-md-3.mb-4
+                .card.team-card
+                    img.card-img-top(src="/images/member3.jpeg", alt="Team Member 1")
+                    .card-body.text-center
+                        h5.card-title Mike Johnson
+                        p.card-text Customer Service Representative
+            .col-md-3.mb-4
+                .card.team-card
+                    img.card-img-top(src="/images/mem.jpeg", alt="Team Member 1")
+                    .card-body.text-center
+                        h5.card-title Emily Davis
+                        p.card-text Graphic Designer    
+
+                                                      
+                        
+        

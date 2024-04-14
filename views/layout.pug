@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title My Home
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha284-T2c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN", crossorigin="anonymous")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css", rel="stylesheet")
+    style
+      | @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Riot&display=swap');
+    link(rel="stylesheet", type="text/css" href="/css/styles.css")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js", crossorigin="anonymous")
+
+  body  
+    main#main
+      block main-content
+    footer.footer.mt-5
+        .container
+            .row
+                .col-md-4.footer-section
+                    a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+                    p.description At 'My Home,' our passion for transforming spaces into personalized sanctuaries drives us to bring you a unique blend of elegance and functionality
+
+                .col-md-4.footer-section
+                    h5 Follow Us
+                    .social-icons
+                        a(href="#" target="_blank")
+                            img(src="images/facebook2 Background Removed.png", alt="Facebook")
+                        a(href="#" target="_blank")
+                            img(src="images/twitter.png", alt="Twitter")
+                        a(href="#" target="_blank")
+                            img(src="images/insta2 Background Removed.png", alt="Instagram")
+                        a(href="#" target="_blank")
+                            img(src="images/linkedin.png", alt="LinkedIn")
+
+                .col-md-4.footer-section
+                    h5 Newsletter
+                    form.newsletter-form
+                        input(type="email", class="form-control newsletter-input", placeholder="Enter your email")
+                        button(type="submit", class="btn btn-dark newsletter-button mt-3") Subscribe

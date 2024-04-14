@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "65d24e55cf062bfbc29afb96"
+  },
+  "name": "Vas 1",
+  "price": 60,
+  "imageUrl": "/images/vas.jpeg"
+},
+{
+  "_id": "65d24e55cf062bfbc29afb97",
+  "name": "Vas 2",
+  "price": 75,
+  "imageUrl": "/images/vas2.jpeg"
+},
+{
+  "_id": "65d24e55cf062bfbc29afb98",
+  "name": "Vas 3",
+  "price": 90,
+  "imageUrl": "/images/vas3.jpeg"
+},
+{
+  "_id": "65d24e55cf062bfbc29afb99",
+  "name": "Books",
+  "price": 50,
+  "imageUrl": "/images/books.jpeg"
+},
+{
+  "_id": {
+    "$oid": "65d27410a2049b0b82895d30"
+  },
+  "name": "shandlor",
+  "price": "99",
+  "imageUrl": "/images/shandlor2.webp"
+},
+{
+  "_id": {
+    "$oid": "65d2742da2049b0b82895d31"
+  },
+  "name": "Mirror",
+  "price": "190",
+  "imageUrl": "/images/mirror2.jpeg"
+},
+{
+  "_id": {
+    "$oid": "65d27449a2049b0b82895d32"
+  },
+  "name": "Golden Vase",
+  "price": "150",
+  "imageUrl": "/images/golden.jpeg"
+},
+{
+  "_id": {
+    "$oid": "65d2746ea2049b0b82895d33"
+  },
+  "name": "White Vase",
+  "price": "100",
+  "imageUrl": "/images/white.jpeg"
+}]

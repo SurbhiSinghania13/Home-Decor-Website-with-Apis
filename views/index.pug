@@ -1,0 +1,172 @@
+extends layout
+
+
+
+block main-content    
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse.text1(id="navbarSupportedContent")
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active.fs-5(aria-current="page", href="/") Home
+            li.nav-item
+              a.nav-link.fs-5(href="/shop") Shop
+            li.nav-item
+              a.nav-link.fs-5(href="/news") News    
+            li.nav-item
+              a.nav-link.fs-5(href="/about") About
+            li.nav-item 
+                a.nav-link(href="/cart")
+                    img(src="/images/cart-shopping-solid.svg", alt="Add to Cart", style="max-width: 1.5rem; height: auto; min-width:1.4rem;")  
+
+    #carouselExampleCaptions.carousel.slide(data-bs-ride="carousel")
+      .carousel-indicators
+        button(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="0", class="active", aria-current="true", aria-label="Slide 1")
+        button(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="1", aria-label="Slide 2")
+        button(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide-to="2", aria-label="Slide 2")
+      .carousel-inner
+        .carousel-item.active
+          img(src="/images/carousel1.webp", class="d-block w-80 custom-height mx-auto", alt="...")
+          .carousel-caption.d-none.d-md-block
+            h5 Living Room Elegance
+            p Explore our collection of stylish furniture and accessories to elevate the elegance of your living room. Create a space that reflects your personality and welcomes comfort.
+        .carousel-item
+          img(src="/images/caro2.webp", class="d-block w-80 custom-height mx-auto", alt="...")
+          .carousel-caption.d-none.d-md-block
+            h5 Bedroom Bliss
+            p Transform your bedroom into a sanctuary of tranquility with our curated selection of cozy bedding, soothing lighting, and chic decor. Sweet dreams await in a space designed just for you.
+        .carousel-item
+          img(src="/images/caro5.jpeg", class="d-block w-80 custom-height mx-auto", alt="...")
+          .carousel-caption.d-none.d-md-block
+            h5 Kitchen Essentials
+            p Discover functional and stylish kitchen essentials that make cooking a joy. From modern cookware to unique decor pieces, we have everything you need to elevate your culinary experience.
+      button.carousel-control-prev(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide="prev")
+        span.carousel-control-prev-icon(aria-hidden="true")
+        span.visually-hidden Previous
+      button.carousel-control-next(type="button", data-bs-target="#carouselExampleCaptions", data-bs-slide="next")
+        span.carousel-control-next-icon(aria-hidden="true")
+        span.visually-hidden Next
+
+    .container.mx-auto.mt-5
+      .row.row-cols-1.row-cols-md-4.g-4
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/vas.jpeg", alt="...")
+              .card-body
+                h5.card-title="Vase Set"
+                p.card-text="$180"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/vas4.jpeg", alt="...")
+              .card-body
+                h5.card-title="Vase Scul"
+                p.card-text="$90"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/vas2.jpeg", alt="...")
+              .card-body
+                h5.card-title="Oval Vase"
+                p.card-text="$75"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/books.jpeg", alt="...")
+              .card-body
+                h5.card-title="Books"
+                p.card-text="$50"   
+      .row.row-cols-1.row-cols-md-4.g-4
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/shandlor2.webp", alt="...")
+              .card-body
+                h5.card-title="Shandlor"
+                p.card-text="$99"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/mirror2.jpeg", alt="...")
+              .card-body
+                h5.card-title="Mirror"
+                p.card-text="$190"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/golden.jpeg", alt="...")
+              .card-body
+                h5.card-title="Golden Vase"
+                p.card-text="$150"
+          .col
+            .card.h-75.mb-1
+              img.card-img-top.custom-height(src="/images/white.jpeg", alt="...")
+              .card-body
+                h5.card-title="White Vase"
+                p.card-text="$100"                                             
+
+    .card.text-bg-dark.w-75.mx-auto.custom-card
+      img.card-img(src="/images/sofa2.jpeg", alt="...")
+      .card-img-overlay.card-body.d-flex.flex-column.justify-content-center.align-items-center
+        h5.card-title Design Award Pieces
+        a.btn.btn-dark(href="#") Check Out
+
+
+    #map-container
+  
+      script.
+        function loadGoogleMapsAPI(callback) {
+            const script = document.createElement('script');
+            const MapKey = "#{MapKey}";
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${MapKey}&callback=${callback}&libraries=places`;
+            document.body.appendChild(script);
+        }
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map-container"), {
+                center: { lat: 43.82595886205766, lng: -79.53913318308567 },
+                zoom: 15
+            });
+
+            displayNearbyShops(map);
+        }
+
+        function displayNearbyShops(map) {
+            const request = {
+                location: { lat: 43.82595886205766, lng: -79.53913318308567 },
+                radius: 2000,
+                type: 'home_goods_store',
+                language: 'en',
+                key: 'AIzaSyBI17P-DzmMI8CgDtdWsmFo7_7QNlSuueY'
+            };
+            
+
+            const service = new google.maps.places.PlacesService(map);
+            console.log("hello");
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (let i = 0; i < results.length; i++) {
+                        const place = results[i];
+                        const marker = new google.maps.Marker({
+                            position: place.geometry.location,
+                            map: map,
+                            title: place.name,
+                            label: {
+                              text: place.name,
+                              color: 'black',
+                              fontSize: '12px',
+                              fontWeight: 'bold'
+                            }
+                        });
+                        google.maps.event.addListener(marker, 'click', function() {
+                          window.location.href = `https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}`;
+                        });
+                    }
+                }
+                else {
+                      console.error('Error fetching nearby shops:', status);
+                    }
+            });
+        }
+
+        loadGoogleMapsAPI('initMap');
+
+
+

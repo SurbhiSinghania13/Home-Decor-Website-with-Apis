@@ -1,0 +1,41 @@
+extends layout
+
+
+
+block main-content   
+    
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse.text1(id="navbarSupportedContent")
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.fs-5(aria-current="page", href="/") Home
+            li.nav-item
+              a.nav-link.active.fs-5(href="/shop") Shop
+            li.nav-item
+              a.nav-link.fs-5(href="/news") News    
+            li.nav-item
+              a.nav-link.fs-5(href="/about") About
+            li.nav-item 
+                a.nav-link(href="/cart")
+                    img(src="/images/cart-shopping-solid.svg", alt="Add to Cart", style="max-width: 1.5rem; height: auto; min-width:1.4rem;")  
+
+    .container.mx-auto.mt-5
+      .row.row-cols-1.row-cols-md-4.g-4
+        each product in menu
+          .col
+            .card.h-100.mb-1
+              img.card-img-top.custom-height(src=product.imageUrl, alt="...")
+              .card-body.d-flex.flex-column
+                h5.card-title=product.name
+                p.card-text=`$${product.price}`     
+                .mt-auto
+                  a.btn.btn-outline-dark.btn-hover-dark(href="#" role="button",class="custom-btn") Add to Cart        
+      .mt-5                                              
+        .row.text-center
+          a.btn.btn-dark#addMoreProducts(href="/shop/add-product") Add More Products            
+ 
+

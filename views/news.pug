@@ -1,0 +1,50 @@
+extends layout
+
+
+
+block main-content 
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse.text1(id="navbarSupportedContent")
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.fs-5(aria-current="page", href="/") Home
+            li.nav-item
+              a.nav-link.fs-5(href="/shop") Shop
+            li.nav-item
+              a.nav-link.active.fs-5(href="/news") News  
+            li.nav-item
+              a.nav-link.fs-5(href="/about") About
+            li.nav-item 
+                a.nav-link(href="/cart")
+                    img(src="/images/cart-shopping-solid.svg", alt="Add to Cart", style="max-width: 1.5rem; height: auto; min-width:1.4rem;")  
+
+    .container.mt-5
+      h1.text-center.mb-4 News
+      .row.row-cols-1.row-cols-md-3.g-4
+        each article in articles
+          .col
+            .card.h-100
+              img.card-img-top(src=article.urlToImage, alt=article.title)
+              .card-body
+                h5.card-title= article.title
+                p.card-text= article.description
+                a.btn.btn-outline-primary(href=article.url, target="_blank") Read More
+
+    nav.mt-5
+        ul.pagination.justify-content-center
+            li.page-item(class=currentPage === 1 ? 'disabled' : '')
+                a.page-link(href=`/news?page=${currentPage - 1}`) Previous
+            - let startPage = Math.max(1, currentPage - 5);
+            - let endPage = Math.min(startPage + 10, totalPages);
+            each page in Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i)
+                if page > 0 
+                    li.page-item(class=currentPage === page ? 'active' : '')
+                        a.page-link(href=`/news?page=${page}`)= page
+            li.page-item(class=currentPage === totalPages ? 'disabled' : '')
+                a.page-link(href=`/news?page=${currentPage + 1}`) Next
+
+        
