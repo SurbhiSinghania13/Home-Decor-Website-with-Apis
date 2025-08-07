@@ -47,10 +47,6 @@ node index.js
 
 http://localhost:8888
 
-## Deployment
-
-The application is deployed on Render and can be accessed [here](https://home-decor-website-with-apis.onrender.com/).
-
 
 ## Contributing
 
